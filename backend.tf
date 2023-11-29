@@ -5,6 +5,6 @@
 # region = "us-east-1" 
 # } 
 # } 
-proveedor "aws" { 
-  región = "nosotros-este-1" 
+proveedor "aws" {
+  región = "us-east-1"
 }

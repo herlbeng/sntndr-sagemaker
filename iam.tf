@@ -7,7 +7,7 @@ data "aws_iam_policy_document" "s3_ls_policy_data" {
     actions = [
       "s3:ListAllMyBuckets"
     ]
-resources = [
+    resources = [
       "arn:aws:s3:::*"
     ]
   }
@@ -16,7 +16,7 @@ resources = [
 data "aws_iam_policy_document" "s3_ls_assume_role_data" {
   statement {
     actions = ["sts:AssumeRole"]
-principals {
+    principals {
       type        = "Service"
       identifiers = ["s3.amazonaws.com"]
     }
