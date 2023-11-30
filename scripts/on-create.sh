@@ -29,7 +29,7 @@ conda activate "$KERNEL_NAME"
 pip install --quiet ipykernel
 
 # Downloading the requirements.txt script from GitHub
-wget https://raw.githubusercontent.com/herlbeng/sntndr-sagemaker/scripts/requirements.txt
+wget https://raw.githubusercontent.com/herlbeng/sntndr-sagemaker/main/scripts/requirements.txt
 
 # Installing the Python libraries listed in the requirements.txt script
 pip install --quiet -r requirements.txt
