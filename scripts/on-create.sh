@@ -18,10 +18,13 @@ rm -rf "$WORKING_DIR/miniconda.sh"
 
 # Instantiating variables used to create the custom kernel
 source "$WORKING_DIR/miniconda/bin/activate"
-KERNEL_NAME="dkhundley_custom_kernel"
+KERNEL_NAME="sntndr-sagemaker_custom_kernel"
+KERNEL_NAME_OLD="dkhundley_custom_kernel"
 PYTHON="3.8"
 
 # Creating the custom kernel
+conda create --yes --name "$KERNEL_NAME_OLD"
+conda clean --yes -a
 conda create --yes --name "$KERNEL_NAME" python="$PYTHON"
 conda activate "$KERNEL_NAME"
 
