@@ -10,7 +10,7 @@ IDLE_TIME=600
 
 # Getting the autostop.py script from GitHub
 echo "Fetching the autostop script..."
-wget https://raw.githubusercontent.com/herlbeng/sntndr-sagemaker/scripts/autostop.py
+wget https://raw.githubusercontent.com/herlbeng/sntndr-sagemaker/main/scripts/autostop.py
 
 # Using crontab to autostop the notebook when idle time is breached
 echo "Starting the SageMaker autostop script in cron."
