@@ -32,7 +32,6 @@ pip install --quiet ipykernel
 wget https://raw.githubusercontent.com/herlbeng/sntndr-sagemaker/main/scripts/requirements.txt
 
 # Downloading the requirements.txt script from AWS s3
-#aws s3 cp s3://herlbeng-terraform/requirements.txt --recursive   ERROR
 
 # Installing the Python libraries listed in the requirements.txt script
 pip install --quiet -r requirements.txt
