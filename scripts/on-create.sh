@@ -29,7 +29,11 @@ conda activate "$KERNEL_NAME"
 pip install --quiet ipykernel
 
 # Downloading the requirements.txt script from GitHub
+#wget https://raw.githubusercontent.com/herlbeng/sntndr-sagemaker/main/scripts/requirements.txt
+
+# Downloading the requirements.txt script from AWS s3
 wget https://raw.githubusercontent.com/herlbeng/sntndr-sagemaker/main/scripts/requirements.txt
+aws s3 cp s3://herlbeng-terraform/requirements.txt --recursive
 
 # Installing the Python libraries listed in the requirements.txt script
 pip install --quiet -r requirements.txt
