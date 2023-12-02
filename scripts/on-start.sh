@@ -9,17 +9,16 @@ set -e
 IDLE_TIME=600
 
 # Getting the autostop.py script from GitHub
-#echo "Fetching the autostop script..."
-#wget https://raw.githubusercontent.com/herlbeng/sntndr-sagemaker/main/scripts/autostop.py
+echo "Fetching the autostop script..."
+wget https://raw.githubusercontent.com/herlbeng/sntndr-sagemaker/main/scripts/autostop.py
 
 # Getting the autostop.py script from AWS s3
-echo "Fetching the autostop script..."
-aws s3 cp s3://herlbeng-terraform/autostop.py --recursive
+#echo "Fetching the autostop script..."
+#aws s3 cp s3://herlbeng-terraform/autostop.py --recursive
 
 # Using crontab to autostop the notebook when idle time is breached
 echo "Starting the SageMaker autostop script in cron."
 (crontab -l 2>/dev/null; echo "*/5 * * * * /usr/bin/python $PWD/autostop.py --time $IDLE_TIME --ignore-connections") | crontab -
-
 
 ## CUSTOM CONDA KERNEL USAGE STEPS
 ## ----------------------------------------------------------------
