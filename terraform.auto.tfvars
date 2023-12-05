@@ -1,2 +1,2 @@
 project_name = "sntndr-sagemaker"
-notebook_name = "${var.project_name}-notebook"
+notebook_name = "${this.project_name}-notebook"
