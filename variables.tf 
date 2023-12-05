@@ -1,7 +1,3 @@
 variable "project_name" {
     type string
 }
-
-variable "notebook_name" {
-    type string
-}
