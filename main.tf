@@ -18,7 +18,7 @@ resource "aws_iam_role" "sagemaker_domain_role" {
   assume_role_policy = data.aws_iam_policy_document.sagemaker_assume_role.json
 }
 
-resource "aws_sagemaker_domain" "sagemakerDomainPOC" {
+resource "aws_sagemaker_studio_domain" "sagemakerDomain" {
   domain_name = "${project_name}-domain"
   auth_mode   = "IAM"
   vpc_id      = module.vpc.vpc_id
