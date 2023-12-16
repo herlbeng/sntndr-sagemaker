@@ -1,5 +1,5 @@
 # Creating the SageMaker notebook instance
-variable project_name {}
+variable "project_name" {}
 
 resource "aws_sagemaker_notebook_instance" "notebook_instance" {
   name                    = "${var.project_name}-notebook"
