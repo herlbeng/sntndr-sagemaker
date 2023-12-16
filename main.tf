@@ -35,7 +35,7 @@ resource "aws_sagemaker_domain" "sagemakerDomain" {
   }
 }
 
-resource "aws_sagemaker_user_profile" "mlops_profile" {
+resource "aws_sagemaker_user_profile" "user_profile" {
   for_each          = var.user_profile_names
   domain_id         = aws_sagemaker_domain.sagemakerDomain.id #"d-0v5zdh7zffd0" #"d-wxhuu1mbq9pm" #"d-s8hloa35njwk"
   user_profile_name = each.key
