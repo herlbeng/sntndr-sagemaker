@@ -1,7 +1,3 @@
-variable "project_name" {
-    type string
-}
-
 variable "access_key" {
   description = "access_key"
   type        = string
