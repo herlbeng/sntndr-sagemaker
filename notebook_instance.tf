@@ -1,6 +1,4 @@
 # Creating the SageMaker notebook instance
-variable "project_name" {}
-
 resource "aws_sagemaker_notebook_instance" "notebook_instance" {
   name                    = "${var.project_name}-notebook"
   role_arn                = aws_iam_role.notebook_iam_role.arn
