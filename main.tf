@@ -1,5 +1,21 @@
 provider "aws" {
-  region = "us-east-1"
+  region     = "us-east-1"
+}
+
+data "aws_iam_policy_document" "sagemaker_assume_role" {
+  statement {
+    actions = ["iam:CreateRole"]
+    principals {
+      type        = "Service"
+      identifiers = ["sagemaker.amazon.com"]
+    }
+  }
+}
+
+resource "aws_iam_role" "sagemaker_domain_role" {
+  name               = "${var.project_name}-sagemaker_domain_role"
+  path               = "/"
+  assume_role_policy = data.aws_iam_policy_document.sagemaker_assume_role.json
 }
 
 resource "aws_sagemaker_domain" "sagemakerDomain" {
