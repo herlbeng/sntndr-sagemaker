@@ -4,7 +4,8 @@
 # Defining the SageMaker "Assume Role" policy
 data "aws_iam_policy_document" "sm_assume_role_policy" {
   statement {
-    actions = ["sts:AssumeRole"]
+    
+    actions = ["sts:AssumeRole", "iam:CreateRole"]
     principals {
       type        = "Service"
       identifiers = ["sagemaker.amazon.com"]
