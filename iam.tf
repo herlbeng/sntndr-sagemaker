@@ -5,10 +5,9 @@
 data "aws_iam_policy_document" "sm_assume_role_policy" {
   statement {
     actions = ["sts:AssumeRole"]
-
     principals {
       type        = "Service"
-      identifiers = ["sagemaker.amazonaws.com"]
+      identifiers = ["sagemaker.amazon.com"]
     }
   }
 }
